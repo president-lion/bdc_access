@@ -10,6 +10,10 @@ build/
 research/
 *.gml
 
+# the reverse-engineering notes: prose about the game's own internals, and the
+# game's code quoted in it. Kept on disk, not published.
+FINDINGS.md
+
 # --- research tooling, kept locally --------------------------------------
 # gscripts holds the probes, dumpers and exporters written to read the game
 # apart. Only the three scripts that make and check the mod are published.
