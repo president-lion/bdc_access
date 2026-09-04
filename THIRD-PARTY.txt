@@ -1,5 +1,4 @@
 Third-party components
-======================
 
 prism.dll
     Prism - https://github.com/ethindp/prism

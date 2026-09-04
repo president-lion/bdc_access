@@ -1,5 +1,4 @@
 bdc_access - accessibility for Bad Dream: Coma
-==============================================
 
 1. Close the game if it is running.
 2. Run "Setup bdc_access.exe".
