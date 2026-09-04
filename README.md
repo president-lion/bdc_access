@@ -97,7 +97,6 @@ gscripts/
   inject_a11y.csx     THE MOD - all injected GML lives here
   verify_a11y.csx     decompiles the patched file and checks every feature survived
   sweep_safety.csx    three static sweeps for the crash classes this game punishes
-  (the UTMT and Ghidra scripts used for the research)
 src/installer/        the setup window - a front end over the two batch files
 src/bridge/           bdcspeech.c, the GML <-> Prism shim, and its x86 build script
 bin/                  the prebuilt setup program and the two 32-bit DLLs
