@@ -1,0 +1,26 @@
+bdc_access - accessibility for Bad Dream: Coma
+==============================================
+
+1. Close the game if it is running.
+2. Run "Setup bdc_access.exe".
+3. Press Alt+I to install.
+4. Start the game normally, with your screen reader running.
+
+The setup window fills the game folder in for you if it can find the game.
+If it cannot, type or paste the folder that holds data.win, or press Alt+B
+to browse for that file.
+
+   Alt+I   install
+   Alt+U   uninstall - puts the game back exactly as it was
+   Alt+B   browse for the game
+   Alt+C   close
+
+Everything the installer does is written into the Details box, which you can
+read at any time, and the result is also announced in a dialog when it is done.
+
+Install.bat and Uninstall.bat are here too, for the command line. The window is
+only a front end that runs them.
+
+Keys, and everything the mod does, are in README.md.
+
+https://github.com/president-lion/bdc_access

@@ -80,8 +80,22 @@ the game's.
 
 1. Download the release package and unzip it.
 2. **Close the game.**
-3. Run `Install.bat`. If it cannot find the game, paste the folder holding `data.win`.
-4. Start the game normally.
+3. Run **`Setup bdc_access.exe`**.
+4. Start the game normally, with your screen reader running.
+
+The setup window opens with the game folder already filled in, if it could find it — so
+`Alt+I` from there is the whole install. If it could not, type or paste the folder that
+holds `data.win`, or press **Browse** (`Alt+B`) and pick that file. `Alt+U` uninstalls,
+`Alt+C` closes, and the Details box keeps everything the installer said. If the game lives
+somewhere only an administrator can write to, it says so and offers to restart itself
+elevated, carrying your folder over.
+
+There is a plain `Install.bat` and `Uninstall.bat` too — the window is only a front end
+that runs them, so both routes do exactly the same thing:
+
+```
+Install.bat ["path\to\game folder"]
+```
 
 The installer backs up `data.win` to `data.win.BDC-A11Y-BACKUP` once, then patches *from
 that backup* every time, so re-running it after an update is always clean rather than
@@ -114,14 +128,16 @@ the way it did - are in [FINDINGS.md](FINDINGS.md).
 ## Repository layout
 
 ```
-Install.bat / Uninstall.bat
+Install.bat / Uninstall.bat   the install, and the only copy of the logic
 gscripts/
   inject_a11y.csx     THE MOD - all injected GML lives here
   verify_a11y.csx     decompiles the patched file and checks every feature survived
   sweep_safety.csx    three static sweeps for the crash classes this game punishes
   (the UTMT and Ghidra scripts used for the research)
+src/installer/        the setup window - a front end over the two batch files
 src/bridge/           bdcspeech.c, the GML <-> Prism shim, and its x86 build script
-bin/                  the two prebuilt 32-bit DLLs
+bin/                  the prebuilt setup program and the two 32-bit DLLs
+make_release.bat      assembles release\ and zips it into the downloadable package
 FINDINGS.md           reverse-engineering notes
 ```
 
@@ -130,9 +146,13 @@ FINDINGS.md           reverse-engineering notes
 The DLLs are prebuilt in `bin/`; rebuild only if you change them.
 
 ```
+src\installer\build_installer.bat   Setup bdc_access.exe
 src\bridge\build_bridge_x86.bat     bdcspeech.dll
 src\build_prism_x86.bat             prism.dll   (32-bit - the game is a 32-bit process)
 ```
+
+The setup program builds with the C# compiler that ships inside Windows itself (.NET
+Framework 4), so there is nothing to install to build it and nothing to install to run it.
 
 Patching needs the [UndertaleModTool](https://github.com/UnderminersTeam/UndertaleModTool)
 CLI in `tools\UTMT_CLI\`. The release package already includes it.
