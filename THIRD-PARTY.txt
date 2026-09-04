@@ -1,0 +1,19 @@
+Third-party components
+======================
+
+prism.dll
+    Prism - https://github.com/ethindp/prism
+    Mozilla Public License 2.0. Redistributed unmodified as a 32-bit build.
+    Source: https://github.com/ethindp/prism
+
+UndertaleModTool CLI (release package only, tools\UTMT_CLI\)
+    https://github.com/UnderminersTeam/UndertaleModTool
+    GNU General Public License v3.0. Version 0.9.2.0, commit
+    03c7048438347799e0717b6e57a9358d000472e0, redistributed unmodified.
+    Complete corresponding source for this exact version:
+    https://github.com/UnderminersTeam/UndertaleModTool/tree/03c7048438347799e0717b6e57a9358d000472e0
+    Its own licence text ships with it as tools\UTMT_CLI\LICENSE.txt.
+
+Bad Dream: Coma is copyright Desert Fox. No part of the game is included here.
+This mod patches your own installed copy in place, keeps a backup of the file it
+changes, and can restore it exactly.
