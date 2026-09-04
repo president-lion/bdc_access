@@ -23,3 +23,8 @@ tools/
 *.pdb
 bin/Release/
 obj/
+
+# the assembled release payload - built by make_release.bat, and 118 MB of it
+# is the third-party patcher
+release/
+*.zip
