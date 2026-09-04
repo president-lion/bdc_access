@@ -1,0 +1,25 @@
+# the patched game data - 237 MB, and it is not ours to ship
+build/
+*.win
+*.win.*
+
+# research output: decompiles, Ghidra projects, sprite dumps
+research/
+
+# the retired injection-based build, kept locally as a record
+Reloaded-II/
+src/BDC.Accessibility/
+
+# upstream Prism clone; the built DLL is committed under bin/
+src/prism/
+
+# the UndertaleModTool CLI - fetched, not authored, and 130 MB
+tools/
+
+# build leftovers
+*.obj
+*.exp
+*.lib
+*.pdb
+bin/Release/
+obj/
