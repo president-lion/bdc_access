@@ -86,9 +86,6 @@ carry real, already-localised text, so those needed no table at all.
 a shim exists at all. If either DLL is missing the calls simply fail and the game plays on
 as if unmodded.
 
-The full reverse-engineering notes - every puzzle, every trap, and why each decision went
-the way it did - are in [FINDINGS.md](FINDINGS.md).
-
 ## Repository layout
 
 ```
@@ -101,7 +98,6 @@ src/installer/        the setup window - a front end over the two batch files
 src/bridge/           bdcspeech.c, the GML <-> Prism shim, and its x86 build script
 bin/                  the prebuilt setup program and the two 32-bit DLLs
 make_release.bat      assembles release\ and zips it into the downloadable package
-FINDINGS.md           claude's reverse-engineering notes
 ```
 
 ## Building

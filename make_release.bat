@@ -46,12 +46,6 @@ copy /Y "%HERE%gscripts\sweep_safety.csx" "%REL%\gscripts\" >nul
 copy /Y "%HERE%bin\bdcspeech.dll" "%REL%\bin\" >nul
 copy /Y "%HERE%bin\prism.dll"     "%REL%\bin\" >nul
 
-REM FINDINGS.md is not in the package - it is 133 pages of notes nobody needs to
-REM install a mod. The README links to it, so point that link at the repository
-REM instead of a file that is not here.
-powershell -NoProfile -ExecutionPolicy Bypass -Command ^
-    "$p='%REL%\README.md'; $t=[IO.File]::ReadAllText($p); $t=$t.Replace('](FINDINGS.md)','](https://github.com/president-lion/bdc_access/blob/main/FINDINGS.md)'); [IO.File]::WriteAllText($p,$t)"
-
 if not exist "%HERE%tools\UTMT_CLI\UndertaleModCli.exe" (
     echo ERROR: tools\UTMT_CLI\UndertaleModCli.exe is missing - the package needs it.
     exit /b 1
