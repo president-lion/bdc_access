@@ -5,7 +5,7 @@ REM ---------------------------------------------------------------------------
 REM Assembles release\ - exactly what goes in the downloadable package - and
 REM zips it.
 REM
-REM   make_release.bat [version]      default: 0.91b
+REM   make_release.bat [version]      default: 0.92
 REM
 REM The zip is named bdcaccess<version>.zip and its contents are the contents of
 REM release\, so unzipping it anywhere gives a folder you can run the setup from.
@@ -17,7 +17,7 @@ REM ---------------------------------------------------------------------------
 
 set "HERE=%~dp0"
 set "VER=%~1"
-if "%VER%"=="" set "VER=0.91b"
+if "%VER%"=="" set "VER=0.92"
 set "REL=%HERE%release"
 set "ZIP=%HERE%bdcaccess%VER%.zip"
 

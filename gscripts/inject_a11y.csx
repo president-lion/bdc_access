@@ -4078,6 +4078,29 @@ if (id == instance_find(Controller, 0))
                     a_picd += "" A piece has been cut from its left edge."";
             }
         }
+
+        // The hospital sink is drawn with what is lying in it on top, and the baked text
+        // only covers the basin. Reported as not being able to find the hair at all: the
+        // description said what was in the sink and the hair was not part of it. The eye
+        // and its blood arrive later, once the patient has the hair and the ear.
+        if (room == Lvl_Hospital_Sink)
+        {
+            var a_shi = instance_find(Hospital_Sink_Hairs, 0);
+            if (instance_exists(a_shi))
+                a_picd += "" A tangled knot of black hair sits over the plug hole."";
+            var a_sbi = instance_find(Hospital_Sink_Blood, 0);
+            if (instance_exists(a_sbi))
+            {
+                if (a_sbi.visible)
+                    a_picd += "" Splashes of blood are spattered over the back of the basin and down into the bowl."";
+            }
+            var a_sei = instance_find(Hospital_Sink_Eye, 0);
+            if (instance_exists(a_sei))
+            {
+                if (a_sei.visible)
+                    a_picd += "" A bloodshot eyeball lies over the plug hole, its nerve trailing behind it."";
+            }
+        }
     }
 
     // F5 repeats it. Entering the room reads it once, and by the time a player has walked
